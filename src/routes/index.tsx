@@ -25,10 +25,10 @@ export const Route = createFileRoute("/")({
 });
 
 const products = [
-  { name: "Rajut Cloud Knit", type: "Rajut premium", price: "Rp 420K", position: "object-left-top" },
-  { name: "Celana Lume Wide", type: "Wide leg", price: "Rp 350K", position: "object-right-top" },
-  { name: "Tote Glaze", type: "Aksesori", price: "Rp 180K", position: "object-left-bottom" },
-  { name: "Jaket Aero Shell", type: "Outerwear", price: "Rp 520K", position: "object-right-bottom" },
+  { name: "Rajut Cloud Knit", type: "Rajut premium", price: "Rp 420K", position: "left-0 top-0" },
+  { name: "Celana Lume Wide", type: "Wide leg", price: "Rp 350K", position: "-left-full top-0" },
+  { name: "Tote Glaze", type: "Aksesori", price: "Rp 180K", position: "left-0 -top-full" },
+  { name: "Jaket Aero Shell", type: "Outerwear", price: "Rp 520K", position: "-left-full -top-full" },
 ];
 
 const testimonials = [
@@ -107,7 +107,7 @@ function Index() {
           <div className="mb-7 flex items-end justify-between"><div><span className="eyebrow">Belanja</span><h2 className="mt-2 font-display text-4xl font-semibold">Koleksi Unggulan</h2></div><a href="#kontak" className="hidden text-sm font-semibold text-muted-foreground hover:text-foreground sm:block">Lihat semua →</a></div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => <article key={product.name} className="glass-soft group rounded-2xl p-3">
-              <div className="aspect-[4/5] overflow-hidden rounded-xl"><img src={collectionGrid} alt={product.name} width={1600} height={1200} loading="lazy" className={`h-[200%] w-[200%] max-w-none object-cover transition-transform duration-500 group-hover:scale-[2.04] ${product.position}`} /></div>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl"><img src={collectionGrid} alt={product.name} width={1600} height={1200} loading="lazy" className={`absolute h-[200%] w-[200%] max-w-none object-cover transition-transform duration-500 group-hover:scale-[1.02] ${product.position}`} /></div>
               <div className="px-1.5 pt-3"><div className="flex items-start justify-between gap-2"><h3 className="text-sm font-semibold">{product.name}</h3><span className="shrink-0 text-sm font-semibold text-accent">{product.price}</span></div><p className="mt-1 text-xs text-muted-foreground">{product.type}</p></div>
             </article>)}
           </div>
